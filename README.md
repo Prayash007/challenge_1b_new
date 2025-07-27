@@ -22,7 +22,9 @@ This is an enhanced implementation of Challenge 1B using **RoBERTa-Base** for do
 
 ## 🎯 Usage
 
-### Process Specific Collection
+### Local Execution
+
+#### Process Specific Collection
 
 ```bash
 # Process Collection 1 (travel planning)
@@ -35,19 +37,56 @@ python run_collection.py --collection 2
 python run_collection.py --collection 3
 ```
 
-### Process All Collections
+#### Process All Collections
 
 ```bash
 # Process all available collections
 python run_collection.py --all
 ```
 
-### Default Behavior
+#### Default Behavior
 
 ```bash
 # Defaults to Collection 1
 python run_collection.py
 ```
+
+### Docker Execution 🐳
+
+#### Quick Start with Scripts
+
+**Linux/macOS:**
+```bash
+chmod +x docker-run.sh
+./docker-run.sh build
+./docker-run.sh run-collection1
+```
+
+**Windows:**
+```batch
+docker-run.bat build
+docker-run.bat run-collection1
+```
+
+#### Docker Compose (Recommended)
+```bash
+docker-compose up --build
+```
+
+#### Direct Docker Commands
+```bash
+# Build image
+docker build -t adobe-hackathon/challenge1b-bert .
+
+# Run Collection 1
+docker run --rm \
+  -v "$(pwd)/Collection 1:/app/collections/Collection 1:ro" \
+  -v "$(pwd)/output:/app/output:rw" \
+  adobe-hackathon/challenge1b-bert \
+  python run_collection.py --collection 1 --docker
+```
+
+> 📖 **See [DOCKER_README.md](DOCKER_README.md) for comprehensive Docker documentation**
 
 ### Help
 
@@ -62,6 +101,7 @@ python run_collection.py --help
 challenge_1b_new/
 ├── Collection 1/           # Travel planning data
 │   ├── challenge1b_input.json
+│   ├── challenge1b_output.json ✅
 │   └── PDFs/
 │       ├── South of France - Cities.pdf
 │       ├── South of France - Cuisine.pdf
@@ -69,9 +109,14 @@ challenge_1b_new/
 ├── utils/
 │   ├── extractor.py        # BERT-optimized PDF extraction
 │   └── ranker.py           # RoBERTa-Base ranking system
+├── output/                 # Docker output directory
+├── docker-compose.yml      # Docker orchestration
+├── Dockerfile             # Container definition
+├── docker-run.sh/.bat     # Docker run scripts
 ├── run_collection.py       # Main script (flexible for any collection)
 ├── requirements.txt       # Dependencies
-└── README.md             # This file
+├── README.md             # This file
+└── DOCKER_README.md      # Docker documentation
 ```
 
 ## 🔧 Dependencies

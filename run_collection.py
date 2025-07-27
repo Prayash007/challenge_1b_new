@@ -20,12 +20,13 @@ sys.path.append('utils')
 from extractor import extract_sections
 from ranker import rank_sections
 
-def process_collection(collection_path):
+def process_collection(collection_path, args=None):
     """
     Process a single collection with BERT ranking.
     
     Args:
         collection_path (str): Path to the collection directory
+        args: Command line arguments
         
     Returns:
         bool: True if successful, False otherwise
@@ -102,7 +103,13 @@ def process_collection(collection_path):
     print(f"🚀 Processing speed: {len(all_sections)/ranking_time:.1f} sections/second")
     
     # Create output JSON file
-    output_json = os.path.join(collection_path, 'challenge1b_output.json')
+    if args and (args.docker or os.path.exists('/app/output')):
+        # Docker environment - write to mounted output directory  
+        collection_num = os.path.basename(collection_path).split()[-1]
+        output_json = os.path.join('/app/output', f'Collection_{collection_num}_output.json')
+    else:
+        # Local environment - write to collection directory
+        output_json = os.path.join(collection_path, 'challenge1b_output.json')
     
     # Build output in the same format as original Challenge 1B
     metadata = {
@@ -178,10 +185,22 @@ def main():
     parser = argparse.ArgumentParser(description='Challenge 1B: BERT-based document ranking')
     parser.add_argument('--collection', type=str, help='Specific collection to process (1, 2, 3, etc.)')
     parser.add_argument('--all', action='store_true', help='Process all available collections')
+    parser.add_argument('--docker', action='store_true', help='Running in Docker environment')
     
     args = parser.parse_args()
     
-    base_dir = os.path.dirname(__file__)
+    # Determine base directory (Docker vs local)
+    if args.docker or os.path.exists('/app/collections'):
+        # Docker environment
+        base_dir = '/app/collections'
+        output_base = '/app/output'
+        print("🐳 Running in Docker environment")
+    else:
+        # Local environment
+        base_dir = os.path.dirname(__file__)
+        output_base = base_dir
+        print("💻 Running in local environment")
+    
     collections = []
     
     if args.collection:
@@ -215,7 +234,7 @@ def main():
     success_count = 0
     for collection_path in collections:
         print(f"\n{'='*80}")
-        if process_collection(collection_path):
+        if process_collection(collection_path, args):
             success_count += 1
         print(f"{'='*80}")
     

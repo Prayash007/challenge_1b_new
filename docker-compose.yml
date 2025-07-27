@@ -1,0 +1,58 @@
+version: '3.8'
+
+services:
+  challenge1b-bert:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: adobe-hackathon/challenge1b-bert:latest
+    container_name: challenge1b-bert
+    
+    # Mount collections and output directories
+    volumes:
+      - ./Collection 1:/app/collections/Collection 1:ro  # Read-only input
+      - ./output:/app/output:rw                          # Write output
+      - bert-cache:/app/.cache                           # Cache BERT models
+    
+    # Environment variables
+    environment:
+      - PYTHONPATH=/app
+      - TRANSFORMERS_CACHE=/app/.cache/transformers
+      - HF_HOME=/app/.cache/huggingface
+    
+    # Resource limits (ensure <1GB constraint compliance)
+    deploy:
+      resources:
+        limits:
+          memory: 2G        # Container limit (model is ~500MB)
+          cpus: '2.0'
+        reservations:
+          memory: 1G
+          cpus: '1.0'
+    
+    # Override default command to process Collection 1
+    command: ["python", "run_collection.py", "--collection", "1"]
+    
+    # Network mode
+    network_mode: "bridge"
+
+  # Optional: Web interface for results viewing
+  results-viewer:
+    image: nginx:alpine
+    container_name: bert-results-viewer
+    ports:
+      - "8080:80"
+    volumes:
+      - ./output:/usr/share/nginx/html:ro
+    depends_on:
+      - challenge1b-bert
+    profiles:
+      - web
+
+volumes:
+  bert-cache:
+    driver: local
+
+networks:
+  default:
+    driver: bridge
