@@ -1,0 +1,253 @@
+{
+  "metadata": {
+    "input_documents": [
+      "Breakfast Ideas.pdf",
+      "Dinner Ideas - Mains_1.pdf",
+      "Dinner Ideas - Mains_2.pdf",
+      "Dinner Ideas - Mains_3.pdf",
+      "Dinner Ideas - Sides_1.pdf",
+      "Dinner Ideas - Sides_2.pdf",
+      "Dinner Ideas - Sides_3.pdf",
+      "Dinner Ideas - Sides_4.pdf",
+      "Lunch Ideas.pdf"
+    ],
+    "persona": "Food Contractor",
+    "job_to_be_done": "Prepare a vegetarian buffet-style dinner menu for a corporate gathering, including gluten-free items.",
+    "processing_timestamp": "2025-07-27T16:43:57.678200",
+    "model_type": "BERT (RoBERTa-Base)",
+    "model_size": "~500MB",
+    "constraint_compliance": "<1GB ✅",
+    "processing_time_seconds": 19.519602060317993,
+    "sections_processed": 438,
+    "sections_ranked": 15
+  },
+  "extracted_sections": [
+    {
+      "document": "Dinner Ideas - Mains_1.pdf",
+      "section_title": "Transfer meat mixture to a baking dish",
+      "page_number": 6,
+      "importance_rank": 1,
+      "similarity_score": 1.6966673135757446,
+      "section_type": "complete_recipe"
+    },
+    {
+      "document": "Dinner Ideas - Mains_1.pdf",
+      "section_title": "Spread a thin layer of meat sauce in a baking dish",
+      "page_number": 5,
+      "importance_rank": 2,
+      "similarity_score": 1.6432560682296753,
+      "section_type": "complete_recipe"
+    },
+    {
+      "document": "Dinner Ideas - Mains_1.pdf",
+      "section_title": "cup cornmeal",
+      "page_number": 10,
+      "importance_rank": 3,
+      "similarity_score": 1.5467021465301514,
+      "section_type": "complete_recipe"
+    },
+    {
+      "document": "Dinner Ideas - Mains_1.pdf",
+      "section_title": "Place chicken in a baking dish",
+      "page_number": 3,
+      "importance_rank": 4,
+      "similarity_score": 1.5458961725234985,
+      "section_type": "complete_recipe"
+    },
+    {
+      "document": "Dinner Ideas - Mains_1.pdf",
+      "section_title": "cornmeal",
+      "page_number": 10,
+      "importance_rank": 5,
+      "similarity_score": 1.54544997215271,
+      "section_type": "complete_recipe"
+    },
+    {
+      "document": "Dinner Ideas - Mains_1.pdf",
+      "section_title": "In a baking dish",
+      "page_number": 10,
+      "importance_rank": 6,
+      "similarity_score": 1.5380456447601318,
+      "section_type": "complete_recipe"
+    },
+    {
+      "document": "Dinner Ideas - Mains_1.pdf",
+      "section_title": "Ingredients",
+      "page_number": 6,
+      "importance_rank": 7,
+      "similarity_score": 1.3946757316589355,
+      "section_type": "recipe_component"
+    },
+    {
+      "document": "Dinner Ideas - Mains_1.pdf",
+      "section_title": "Serve",
+      "page_number": 6,
+      "importance_rank": 8,
+      "similarity_score": 1.384165644645691,
+      "section_type": "recipe_component"
+    },
+    {
+      "document": "Dinner Ideas - Mains_1.pdf",
+      "section_title": "Ingredients",
+      "page_number": 10,
+      "importance_rank": 9,
+      "similarity_score": 1.3409687280654907,
+      "section_type": "recipe_component"
+    },
+    {
+      "document": "Dinner Ideas - Mains_1.pdf",
+      "section_title": "Serve",
+      "page_number": 10,
+      "importance_rank": 10,
+      "similarity_score": 1.3381516933441162,
+      "section_type": "recipe_component"
+    },
+    {
+      "document": "Dinner Ideas - Mains_1.pdf",
+      "section_title": "Ingredients",
+      "page_number": 7,
+      "importance_rank": 11,
+      "similarity_score": 1.1925805807113647,
+      "section_type": "recipe_component"
+    },
+    {
+      "document": "Dinner Ideas - Mains_1.pdf",
+      "section_title": "Instructions",
+      "page_number": 8,
+      "importance_rank": 12,
+      "similarity_score": 1.19057297706604,
+      "section_type": "recipe_component"
+    },
+    {
+      "document": "Dinner Ideas - Mains_1.pdf",
+      "section_title": "Ingredients",
+      "page_number": 4,
+      "importance_rank": 13,
+      "similarity_score": 1.189789891242981,
+      "section_type": "recipe_component"
+    },
+    {
+      "document": "Dinner Ideas - Mains_1.pdf",
+      "section_title": "Serve",
+      "page_number": 4,
+      "importance_rank": 14,
+      "similarity_score": 1.1892279386520386,
+      "section_type": "recipe_component"
+    },
+    {
+      "document": "Dinner Ideas - Mains_1.pdf",
+      "section_title": "Ingredients",
+      "page_number": 9,
+      "importance_rank": 15,
+      "similarity_score": 1.1812751293182373,
+      "section_type": "recipe_component"
+    }
+  ],
+  "subsection_analysis": [
+    {
+      "document": "Dinner Ideas - Mains_1.pdf",
+      "section_title": "Transfer meat mixture to a baking dish",
+      "refined_text": ". • Spread mashed potatoes over the top and sprinkle with grated cheddar cheese. • Bake for 20 -25 minutes until golden and bubbly. • Serve warm. Pad Thai Ingredients:",
+      "page_number": 6,
+      "section_type": "complete_recipe"
+    },
+    {
+      "document": "Dinner Ideas - Mains_1.pdf",
+      "section_title": "Spread a thin layer of meat sauce in a baking dish",
+      "refined_text": ". • Layer with 3 lasagna noodles, 1/3 of the ricotta mixture, 1/3 of the meat sauce, and 1/3 of the shred ded mozzarella cheese. • Repeat layers twice more. • Cover with foil and bake for 25 minutes. • Remove foil and bake for an additional 25 minutes until cheese is melted and bubbly. • Let stand f...",
+      "page_number": 5,
+      "section_type": "complete_recipe"
+    },
+    {
+      "document": "Dinner Ideas - Mains_1.pdf",
+      "section_title": "cup cornmeal",
+      "refined_text": "• 1 teaspoon paprika • 1 teaspoon cumin • 1 teaspoon salt • 1/2 teaspoon pepper • 1/2 cup buttermilk • 1/4 cup vegetable oil • Taco shells or tortillas • Shredded cabbage, diced tomatoes, sliced avocado, and lime wedges for toppings Instructions: • In a bowl, mix flour,",
+      "page_number": 10,
+      "section_type": "complete_recipe"
+    },
+    {
+      "document": "Dinner Ideas - Mains_1.pdf",
+      "section_title": "Place chicken in a baking dish",
+      "refined_text": ", top with marinara sauce and shredded mozzarella cheese. • Bake for 20 -25 minutes until cheese is melted and bubbly. • Serve warm. Spaghetti Bolognese Ingredients: • 1 pound ground beef • 1 small onion, diced • 2 cloves garlic, minced • 1 carrot, grated • 1 celery stalk, diced • 1 can (28 ounces) ...",
+      "page_number": 3,
+      "section_type": "complete_recipe"
+    },
+    {
+      "document": "Dinner Ideas - Mains_1.pdf",
+      "section_title": "cornmeal",
+      "refined_text": ", paprika, cumin, salt, and pepper. • Dip fish fillets in buttermilk, then coat with the flour mixture. • Heat vegetable oil in a skillet over medium heat. • Cook fish until golden and cooked through. • Serve fish in taco shells or tortillas with desired toppings.",
+      "page_number": 10,
+      "section_type": "complete_recipe"
+    },
+    {
+      "document": "Dinner Ideas - Mains_1.pdf",
+      "section_title": "In a baking dish",
+      "refined_text": ", layer eggplant slices, marinara sauce, and shredded mozzarella cheese. • Repeat layers and top with remaining cheese. • Bake for 25 -30 minutes until cheese is melted and bubbly. • Serve warm. Fish Tacos Ingredients: • 1 pound white fish fillets (such as cod or tilapia) • 1/2 cup flour • 1/2",
+      "page_number": 10,
+      "section_type": "complete_recipe"
+    },
+    {
+      "document": "Dinner Ideas - Mains_1.pdf",
+      "section_title": "Ingredients",
+      "refined_text": "• 1 pound ground lamb or beef • 1 small onion, diced • 2 cloves garlic, minced • 1 cup frozen peas and carrots • 1 cup beef broth • 2 tablespoons tomato paste • 2 tablespoons Worcestershire sauce • 4 cups mashed potatoes • 1/4 cup grated cheddar cheese • Salt and pepper to tast e Instructions: • Pre...",
+      "page_number": 6,
+      "section_type": "recipe_component"
+    },
+    {
+      "document": "Dinner Ideas - Mains_1.pdf",
+      "section_title": "Serve",
+      "refined_text": ". Shepherd's Pie Ingredients: • 1 pound ground lamb or beef • 1 small onion, diced • 2 cloves garlic, minced • 1 cup frozen peas and carrots • 1 cup beef broth • 2 tablespoons tomato paste • 2 tablespoons Worcestershire sauce • 4 cups mashed potatoes • 1/4 cup grated cheddar cheese • Salt and pepper...",
+      "page_number": 6,
+      "section_type": "recipe_component"
+    },
+    {
+      "document": "Dinner Ideas - Mains_1.pdf",
+      "section_title": "Ingredients",
+      "refined_text": "• 1 pound white fish fillets (such as cod or tilapia) • 1/2 cup flour • 1/2 cup cornmeal • 1 teaspoon paprika • 1 teaspoon cumin • 1 teaspoon salt • 1/2 teaspoon pepper • 1/2 cup buttermilk • 1/4 cup vegetable oil • Taco shells or tortillas • Shredded cabbage, diced tomatoes, sliced avocado, and lim...",
+      "page_number": 10,
+      "section_type": "recipe_component"
+    },
+    {
+      "document": "Dinner Ideas - Mains_1.pdf",
+      "section_title": "Serve",
+      "refined_text": "warm. Fish Tacos Ingredients: • 1 pound white fish fillets (such as cod or tilapia) • 1/2 cup flour • 1/2 cup cornmeal • 1 teaspoon paprika • 1 teaspoon cumin • 1 teaspoon salt • 1/2 teaspoon pepper • 1/2 cup buttermilk • 1/4 cup vegetable oil • Taco shells or tortillas • Shredded cabbage, diced tom...",
+      "page_number": 10,
+      "section_type": "recipe_component"
+    },
+    {
+      "document": "Dinner Ideas - Mains_1.pdf",
+      "section_title": "Ingredients",
+      "refined_text": "• 2 pounds beef chuck, cut into cubes • 1 small onion, diced • 2 cloves garlic, minced • 1 cup red wine • 2 cups beef broth • 1 cup mushrooms, sliced • 1 cup carrots, sliced • 1 cup pearl onions • 2 tablespoons tomato paste • 2 tablespoons flour • 2 tablespoons butter • 1 teaspoon thyme • 1 bay leaf...",
+      "page_number": 7,
+      "section_type": "recipe_component"
+    },
+    {
+      "document": "Dinner Ideas - Mains_1.pdf",
+      "section_title": "Instructions",
+      "refined_text": "• In a large skillet, heat olive oil over medium heat. • Add chicken thighs and cook until browned on both sides, then set aside. • In the same skillet, sauté diced onion, minced garlic, and sliced bell pepper until softened. • Stir in diced tomatoes, chicken broth, red wine, oregano, basil, and oli...",
+      "page_number": 8,
+      "section_type": "recipe_component"
+    },
+    {
+      "document": "Dinner Ideas - Mains_1.pdf",
+      "section_title": "Ingredients",
+      "refined_text": "• 1 pound large shrimp, peeled and deveined • 4 cloves garlic, minced • 1/4 cup white wine • 1/4 cup chicken broth • 1/4 cup lemon juice • 1/4 cup butter • 2 tablespoons olive oil • 1/4 cup chopped parsley • Salt and pepper to taste • Cooked pasta for serving Instructions: • Heat olive oil and butte...",
+      "page_number": 4,
+      "section_type": "recipe_component"
+    },
+    {
+      "document": "Dinner Ideas - Mains_1.pdf",
+      "section_title": "Serve",
+      "refined_text": "chicken over cooked rice, garnished with sliced green onions. Shrimp Scampi Ingredients: • 1 pound large shrimp, peeled and deveined • 4 cloves garlic, minced • 1/4 cup white wine • 1/4 cup chicken broth • 1/4 cup lemon juice • 1/4 cup butter • 2 tablespoons olive oil • 1/4 cup chopped parsley • Sal...",
+      "page_number": 4,
+      "section_type": "recipe_component"
+    },
+    {
+      "document": "Dinner Ideas - Mains_1.pdf",
+      "section_title": "Ingredients",
+      "refined_text": "• 1 pound chicken breast, cubed • 1 cup yogurt • 2 tablespoons lemon juice • 2 cloves garlic, minced • 1 teaspoon grated ginger • 1 teaspoon cumin • 1 teaspoon coriander • 1 teaspoon turmeric • 1 teaspoon paprika • 1 teaspoon garam masala • 1/2 cup heavy cream • 1 can (14. 5 ounces) diced tomatoes •...",
+      "page_number": 9,
+      "section_type": "recipe_component"
+    }
+  ]
+}

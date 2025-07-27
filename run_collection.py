@@ -103,7 +103,7 @@ def process_collection(collection_path, args=None):
     print(f"🚀 Processing speed: {len(all_sections)/ranking_time:.1f} sections/second")
     
     # Create output JSON file
-    if args and (args.docker or os.path.exists('/app/output')):
+    if args and args.docker:
         # Docker environment - write to mounted output directory  
         collection_num = os.path.basename(collection_path).split()[-1]
         output_json = os.path.join('/app/output', f'Collection_{collection_num}_output.json')
