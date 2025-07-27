@@ -1,0 +1,33 @@
+# Requirements for Improved BERT Implementation
+# Adobe Hackathon Challenge 1B - BERT Version
+
+# Core PDF processing
+PyPDF2==3.0.1
+
+# Advanced transformer models
+torch>=1.11.0
+transformers>=4.21.0
+tokenizers>=0.13.0
+
+# Machine learning and similarity calculations
+scikit-learn>=1.1.0
+numpy>=1.21.0
+
+# Optional: GPU acceleration (if available)
+# torch-audio  # Uncomment if using GPU
+# torchaudio   # Uncomment if using GPU
+
+# Data handling
+pandas>=1.4.0
+
+# Progress tracking (optional)
+tqdm>=4.64.0
+
+# Memory optimization
+psutil>=5.9.0
+
+# Development and testing
+pytest>=7.0.0
+
+# Performance monitoring
+memory-profiler>=0.60.0
