@@ -1,0 +1,1 @@
+The outputs in this folder are those generated using docker image using sample datasets.
