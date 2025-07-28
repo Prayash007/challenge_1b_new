@@ -1,0 +1,249 @@
+{
+  "metadata": {
+    "input_documents": [
+      "South of France - Cities.pdf",
+      "South of France - Cuisine.pdf",
+      "South of France - History.pdf",
+      "South of France - Restaurants and Hotels.pdf",
+      "South of France - Things to Do.pdf",
+      "South of France - Tips and Tricks.pdf",
+      "South of France - Traditions and Culture.pdf"
+    ],
+    "persona": "Travel Planner",
+    "job_to_be_done": "Plan a trip of 4 days for a group of 10 college friends.",
+    "processing_timestamp": "2025-07-28T17:37:33.596983",
+    "model_type": "BERT (RoBERTa-Base)",
+    "processing_time_seconds": 11.16904592514038,
+    "sections_processed": 164,
+    "sections_ranked": 15
+  },
+  "extracted_sections": [
+    {
+      "document": "South of France - Cities.pdf",
+      "section_title": "Content Block 1: Conclusion The South of France is home to a divers...",
+      "page_number": 14,
+      "importance_rank": 1,
+      "similarity_score": 1.1971648931503296,
+      "section_type": "content_block"
+    },
+    {
+      "document": "South of France - Cuisine.pdf",
+      "section_title": "Ingredients",
+      "page_number": 1,
+      "importance_rank": 2,
+      "similarity_score": 1.147057294845581,
+      "section_type": "recipe_component"
+    },
+    {
+      "document": "South of France - Cities.pdf",
+      "section_title": "Content Block 2: • Language : While French is the oﬃcial language, ...",
+      "page_number": 2,
+      "importance_rank": 3,
+      "similarity_score": 1.146921992301941,
+      "section_type": "content_block"
+    },
+    {
+      "document": "South of France - Cuisine.pdf",
+      "section_title": "famous dish",
+      "page_number": 1,
+      "importance_rank": 4,
+      "similarity_score": 1.1464731693267822,
+      "section_type": "complete_recipe"
+    },
+    {
+      "document": "South of France - Cities.pdf",
+      "section_title": "Content Block 1: Overview of the Region The South of France, or \"Le...",
+      "page_number": 2,
+      "importance_rank": 5,
+      "similarity_score": 1.1453332901000977,
+      "section_type": "content_block"
+    },
+    {
+      "document": "South of France - Cities.pdf",
+      "section_title": "Procedure: next",
+      "page_number": 7,
+      "importance_rank": 6,
+      "similarity_score": 1.142372965812683,
+      "section_type": "procedural"
+    },
+    {
+      "document": "South of France - Cities.pdf",
+      "section_title": "Content Block 2: • Mu CEM (Museum of European and Mediterranean Civ...",
+      "page_number": 3,
+      "importance_rank": 7,
+      "similarity_score": 1.1419190168380737,
+      "section_type": "content_block"
+    },
+    {
+      "document": "South of France - Cities.pdf",
+      "section_title": "Content Block 1: Comprehensive Guide to Major Cities in the South o...",
+      "page_number": 1,
+      "importance_rank": 8,
+      "similarity_score": 1.1416243314743042,
+      "section_type": "content_block"
+    },
+    {
+      "document": "South of France - Cities.pdf",
+      "section_title": "Content Block 1: lovers from around the globe",
+      "page_number": 6,
+      "importance_rank": 9,
+      "similarity_score": 0.9977805018424988,
+      "section_type": "content_block"
+    },
+    {
+      "document": "South of France - Cities.pdf",
+      "section_title": "with dish",
+      "page_number": 4,
+      "importance_rank": 10,
+      "similarity_score": 0.9971731901168823,
+      "section_type": "complete_recipe"
+    },
+    {
+      "document": "South of France - Cities.pdf",
+      "section_title": "Content Block 3: The city hosts several festivals throughout the ye...",
+      "page_number": 3,
+      "importance_rank": 11,
+      "similarity_score": 0.9966357350349426,
+      "section_type": "content_block"
+    },
+    {
+      "document": "South of France - Cuisine.pdf",
+      "section_title": "Serve",
+      "page_number": 2,
+      "importance_rank": 12,
+      "similarity_score": 0.9963458776473999,
+      "section_type": "recipe_component"
+    },
+    {
+      "document": "South of France - Cities.pdf",
+      "section_title": "Serve",
+      "page_number": 8,
+      "importance_rank": 13,
+      "similarity_score": 0.9942868947982788,
+      "section_type": "recipe_component"
+    },
+    {
+      "document": "South of France - Cities.pdf",
+      "section_title": "Content Block 1: Montpellier: A U niversity City with Medieval Char...",
+      "page_number": 10,
+      "importance_rank": 14,
+      "similarity_score": 0.9937828779220581,
+      "section_type": "content_block"
+    },
+    {
+      "document": "South of France - Cities.pdf",
+      "section_title": "Content Block 2: Don't miss the Cours Saleya market, where you can ...",
+      "page_number": 5,
+      "importance_rank": 15,
+      "similarity_score": 0.9928094148635864,
+      "section_type": "content_block"
+    }
+  ],
+  "subsection_analysis": [
+    {
+      "document": "South of France - Cities.pdf",
+      "section_title": "Content Block 1: Conclusion The South of France is home to a divers...",
+      "refined_text": "Conclusion The South of France is home to a diverse array of cities, each with its own unique history, culture, and attractions. From the ancient Roman ruins of Arles and Nîmes to the medieval fortresses of Carcassonne and Avignon, each city oﬀers a glimpse into the rich heritage of the region. Whet...",
+      "page_number": 14,
+      "section_type": "content_block"
+    },
+    {
+      "document": "South of France - Cuisine.pdf",
+      "section_title": "Ingredients",
+      "refined_text": ", and traditional recipes passed down through generations. This guide will take you through the diﬀerent types of food, famous dishes, must -visit restaurants, renowned wine regions, and the types of wines they produce to help you plan an unforg ettable culinary adventure.",
+      "page_number": 1,
+      "section_type": "recipe_component"
+    },
+    {
+      "document": "South of France - Cities.pdf",
+      "section_title": "Content Block 2: • Language : While French is the oﬃcial language, ...",
+      "refined_text": "• Language : While French is the oﬃcial language, English is widely spoken in tourist areas. Learning a few basic French phrases can enhance your travel experience.",
+      "page_number": 2,
+      "section_type": "content_block"
+    },
+    {
+      "document": "South of France - Cuisine.pdf",
+      "section_title": "famous dish",
+      "refined_text": "es, must -visit restaurants, renowned wine regions, and the types of wines they produce to help you plan an unforg ettable culinary adventure.",
+      "page_number": 1,
+      "section_type": "complete_recipe"
+    },
+    {
+      "document": "South of France - Cities.pdf",
+      "section_title": "Content Block 1: Overview of the Region The South of France, or \"Le...",
+      "refined_text": "Overview of the Region The South of France, or \"Le Midi,\" encompasses the regions of Provence -Alpes -Côte d'Azur, Occitanie, and parts of Nouvelle -Aquitaine. This area is renowned for its diverse landscapes, from the sun -drenched beaches of the French Riviera to the rolling vineyards of Provence ...",
+      "page_number": 2,
+      "section_type": "content_block"
+    },
+    {
+      "document": "South of France - Cities.pdf",
+      "section_title": "Procedure: next",
+      "refined_text": "to the Palais des Papes, this Romanesque cathedral dates back to the 12 th century and features a gilded statue of the Virgin Mary. • Place de l'Horloge : The main square in Avignon, this lively area is surrounded by cafes, restau rants, and historic buildings, including the 19 th -century town hall...",
+      "page_number": 7,
+      "section_type": "procedural"
+    },
+    {
+      "document": "South of France - Cities.pdf",
+      "section_title": "Content Block 2: • Mu CEM (Museum of European and Mediterranean Civ...",
+      "refined_text": "• Mu CEM (Museum of European and Mediterranean Civilizations) : This modern museum explores the cultural history of the Mediterranean region through a variety of exhibits and interactive displays. • Le Panie r: The oldest district in Marseille, Le Panier is a maze of narrow streets, colorful buildin...",
+      "page_number": 3,
+      "section_type": "content_block"
+    },
+    {
+      "document": "South of France - Cities.pdf",
+      "section_title": "Content Block 1: Comprehensive Guide to Major Cities in the South o...",
+      "refined_text": "Comprehensive Guide to Major Cities in the South of France Introduction The South of France, known for its stunning landscapes, Mediterranean coastline, and rich cultural heritage, is home to some of the most beautiful and historically significant cities in the country. This guide provides an in -de...",
+      "page_number": 1,
+      "section_type": "content_block"
+    },
+    {
+      "document": "South of France - Cities.pdf",
+      "section_title": "Content Block 1: lovers from around the globe",
+      "refined_text": "lovers from around the globe. Nice's cuisine is also a highlight, with dishes like salade niçoise and socca (a chickpea flour pancake) being local specialties.",
+      "page_number": 6,
+      "section_type": "content_block"
+    },
+    {
+      "document": "South of France - Cities.pdf",
+      "section_title": "with dish",
+      "refined_text": "es like bouillabaisse (a traditional fish stew) and pastis (an anise - flavored aperitif) being local favorites.",
+      "page_number": 4,
+      "section_type": "complete_recipe"
+    },
+    {
+      "document": "South of France - Cities.pdf",
+      "section_title": "Content Block 3: The city hosts several festivals throughout the ye...",
+      "refined_text": "The city hosts several festivals throughout the year, including the Festival de Marseille, which celeb rates contemporary dance, theater, and music. Marseille's cuisine is.",
+      "page_number": 3,
+      "section_type": "content_block"
+    },
+    {
+      "document": "South of France - Cuisine.pdf",
+      "section_title": "Serve",
+      "refined_text": "d in bars, and gâteau Basque, a traditional Basque cake filled with pastry cream or cherry jam.",
+      "page_number": 2,
+      "section_type": "recipe_component"
+    },
+    {
+      "document": "South of France - Cities.pdf",
+      "section_title": "Serve",
+      "refined_text": "d as a museum. Visitors can see where Cézanne created many of his masterpieces and gain insight into his artistic process. Artisti c Heritage • Walking Tour: Take a walking tour of sites related to Paul Cézanne, such as the Terrain des Peintres and the Bibémus Quarry. • Local Markets: Visit the city...",
+      "page_number": 8,
+      "section_type": "recipe_component"
+    },
+    {
+      "document": "South of France - Cities.pdf",
+      "section_title": "Content Block 1: Montpellier: A U niversity City with Medieval Char...",
+      "refined_text": "Montpellier: A U niversity City with Medieval Charm History Montpellier, founded in the 10 th century, is known for its prestigious university and vibrant cultural scene. The city has a rich history, with a blend of medieval, Renaissance, and modern architecture. Montpellie r has been a center of le...",
+      "page_number": 10,
+      "section_type": "content_block"
+    },
+    {
+      "document": "South of France - Cities.pdf",
+      "section_title": "Content Block 2: Don't miss the Cours Saleya market, where you can ...",
+      "refined_text": "Don't miss the Cours Saleya market, where you can find fresh produce, flowers, and local delicacies. • Matisse Museum : Dedicated to the works of Henri Matisse, who spent much of his life in Nice, this museum features a comprehensive collection of his paintings, sculptures, and drawings. Hidden Gems...",
+      "page_number": 5,
+      "section_type": "content_block"
+    }
+  ]
+}
