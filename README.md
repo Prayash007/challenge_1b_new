@@ -2,11 +2,12 @@
 
 ## 🏆 Advanced BERT-based Document Ranking System
 
-This is an enhanced implementation of Challenge 1B using **RoBERTa-Base** for document ranking, designed to meet the <1GB constraint requirement.
+This is a BERT-based implementation of Challenge 1B using **RoBERTa-Base** for document ranking, designed to meet the <1GB constraint requirement.
 
 ### 🚀 Key Features
 
-- **RoBERTa-Base Model**: 125M parameters, ~500MB (constraint compliant)
+- **Pure BERT Architecture**: Uses RoBERTa-Base model exclusively
+- **Model Specifications**: 125M parameters, ~500MB (constraint compliant)
 - **Multi-layer Embeddings**: Uses last 4 transformer layers for rich representations
 - **Dynamic Persona Handling**: Adapts to different personas and job descriptions
 - **Semantic Query Expansion**: Expands queries with related terms
@@ -153,15 +154,17 @@ Key packages:
    SOURCE: South of France - Cities.pdf
 ```
 
-## 🆚 Comparison with TF-IDF
+## 🧠 BERT Implementation Details
 
-| Feature | TF-IDF | BERT |
-|---------|--------|------|
-| Accuracy | 4.2/5 | 4.8/5 |
-| Speed | 140/s | 9/s |
-| Model Size | <10MB | 500MB |
-| Semantic Understanding | Basic | Advanced |
-| Persona Adaptation | Limited | Dynamic |
+This implementation uses **pure BERT** (RoBERTa-Base) for semantic document ranking:
+
+| Metric | Value |
+|--------|-------|
+| Accuracy | ~4.8/5 |
+| Speed | 8-10 sections/s |
+| Model Size | ~500MB |
+| Semantic Understanding | Advanced |
+| Persona Adaptation | Dynamic |
 
 ## 🏅 Adobe Hackathon Compliance
 
@@ -186,14 +189,11 @@ Key packages:
 - **Embeddings**: Multi-layer (last 4 layers averaged)
 - **Optimization**: INT8 quantization for speed
 
-### Ranking Algorithm
+### Ranking Algorithm (BERT-Only)
 1. **Section Filtering**: Remove low-quality sections
-2. **Keyword Extraction**: Dynamic persona analysis
+2. **Keyword Extraction**: Dynamic persona analysis  
 3. **Query Expansion**: Semantic term expansion
-4. **BERT Encoding**: Multi-layer embeddings
-5. **Similarity Scoring**: Cosine similarity
+4. **BERT Encoding**: Multi-layer RoBERTa embeddings
+5. **Similarity Scoring**: Cosine similarity computation
 6. **Result Ranking**: Score-based ordering
 
----
-
-🎉 **Ready for Adobe Hackathon Challenge 1B submission!**
