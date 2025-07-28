@@ -27,3 +27,5 @@ Our solution addresses the core task of semantically ranking PDF document sectio
 ### ✅ Result
 
 The system ranks \~160 sections in under 18 seconds, maintaining \~4.8/5 accuracy. It runs efficiently on constrained environments, is Dockerized for portability, and remains highly adaptable due to its pure NLP-based architecture.
+
+Team !NoFound
