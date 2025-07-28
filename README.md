@@ -196,4 +196,3 @@ Key packages:
 
 ---
 
-🎉 **Ready for Adobe Hackathon Challenge 1B submission!**
