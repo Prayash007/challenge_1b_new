@@ -1,8 +1,13 @@
 #!/usr/bin/env python3
 """
-Challenge 1B New: BERT Hackathon Compliance Version
-Processes PDFs from /app/input with BERT ranking and outputs to /app/output
+Challenge 1B: BERT Document Ranking (Hackathon Entry Point)
+Docker-compatible entry point for hackathon submission.
+Processes /app/input -> /app/output with BERT ranking.
+
+Author: Adobe Hackathon Team
+Date: July 2025
 """
+
 import os
 import sys
 import json
@@ -10,41 +15,40 @@ import datetime
 import glob
 import time
 
-# Add utils to path
+# Import utilities
 sys.path.append('utils')
-
 from extractor import extract_sections
 from ranker import rank_sections
 
+
 def process_hackathon_input():
     """
-    Process PDFs from /app/input according to hackathon guidelines with BERT.
-    Generates individual JSON files and consolidated output.json.
+    Main entry point for hackathon Docker environment.
+    Processes PDFs from /app/input and outputs results to /app/output.
     """
     input_dir = '/app/input'
     output_dir = '/app/output'
     
-    # Fallback to local collections if not in Docker
+    # Fall back to local development if not in Docker
     if not os.path.exists(input_dir):
-        print("🐳 Docker input not found, using local Collection 1...")
+        print("Docker environment not detected, using local Collection 1...")
         return process_local_collection()
     
     os.makedirs(output_dir, exist_ok=True)
     
-    print("🤖 ADOBE HACKATHON CHALLENGE 1B - BERT IMPLEMENTATION")
-    print("🏆 Advanced BERT-based Document Ranking System")
-    print("=" * 80)
-    print(f"📂 Processing PDFs from {input_dir}")
-    print(f"📤 Output will be written to {output_dir}")
+    print("CHALLENGE 1B: BERT Document Ranking")
+    print("=" * 50)
+    print(f"Input directory: {input_dir}")
+    print(f"Output directory: {output_dir}")
     
-    # Look for challenge1b_input.json in input directory
-    input_json_path = os.path.join(input_dir, 'challenge1b_input.json')
-    if not os.path.exists(input_json_path):
-        print("📝 No challenge1b_input.json found, creating default BERT persona...")
-        # Create default input spec for BERT
-        spec = {
-            "persona": {"role": "AI Document Analyst"},
-            "job_to_be_done": {"task": "Use BERT to analyze and rank document sections by semantic relevance"},
+    # Look for configuration file
+    config_path = os.path.join(input_dir, 'challenge1b_input.json')
+    if not os.path.exists(config_path):
+        print("No configuration file found, using defaults...")
+        # Default configuration for BERT
+        config = {
+            "persona": {"role": "Document Analyst"},
+            "job_to_be_done": {"task": "Rank document sections by relevance using BERT"},
             "documents": []
         }
     else:

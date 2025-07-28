@@ -13,11 +13,11 @@
     ],
     "persona": "Food Contractor",
     "job_to_be_done": "Prepare a vegetarian buffet-style dinner menu for a corporate gathering, including gluten-free items.",
-    "processing_timestamp": "2025-07-27T16:43:57.678200",
+    "processing_timestamp": "2025-07-28T20:27:58.006361",
     "model_type": "BERT (RoBERTa-Base)",
     "model_size": "~500MB",
     "constraint_compliance": "<1GB ✅",
-    "processing_time_seconds": 19.519602060317993,
+    "processing_time_seconds": 17.241577863693237,
     "sections_processed": 438,
     "sections_ranked": 15
   },
@@ -27,7 +27,7 @@
       "section_title": "Transfer meat mixture to a baking dish",
       "page_number": 6,
       "importance_rank": 1,
-      "similarity_score": 1.6966673135757446,
+      "similarity_score": 1.6969574689865112,
       "section_type": "complete_recipe"
     },
     {
@@ -35,23 +35,23 @@
       "section_title": "Spread a thin layer of meat sauce in a baking dish",
       "page_number": 5,
       "importance_rank": 2,
-      "similarity_score": 1.6432560682296753,
-      "section_type": "complete_recipe"
-    },
-    {
-      "document": "Dinner Ideas - Mains_1.pdf",
-      "section_title": "cup cornmeal",
-      "page_number": 10,
-      "importance_rank": 3,
-      "similarity_score": 1.5467021465301514,
+      "similarity_score": 1.6404153108596802,
       "section_type": "complete_recipe"
     },
     {
       "document": "Dinner Ideas - Mains_1.pdf",
       "section_title": "Place chicken in a baking dish",
       "page_number": 3,
+      "importance_rank": 3,
+      "similarity_score": 1.54786217212677,
+      "section_type": "complete_recipe"
+    },
+    {
+      "document": "Dinner Ideas - Mains_1.pdf",
+      "section_title": "cup cornmeal",
+      "page_number": 10,
       "importance_rank": 4,
-      "similarity_score": 1.5458961725234985,
+      "similarity_score": 1.546310305595398,
       "section_type": "complete_recipe"
     },
     {
@@ -59,7 +59,7 @@
       "section_title": "cornmeal",
       "page_number": 10,
       "importance_rank": 5,
-      "similarity_score": 1.54544997215271,
+      "similarity_score": 1.5454065799713135,
       "section_type": "complete_recipe"
     },
     {
@@ -67,23 +67,23 @@
       "section_title": "In a baking dish",
       "page_number": 10,
       "importance_rank": 6,
-      "similarity_score": 1.5380456447601318,
+      "similarity_score": 1.537678837776184,
       "section_type": "complete_recipe"
-    },
-    {
-      "document": "Dinner Ideas - Mains_1.pdf",
-      "section_title": "Ingredients",
-      "page_number": 6,
-      "importance_rank": 7,
-      "similarity_score": 1.3946757316589355,
-      "section_type": "recipe_component"
     },
     {
       "document": "Dinner Ideas - Mains_1.pdf",
       "section_title": "Serve",
       "page_number": 6,
+      "importance_rank": 7,
+      "similarity_score": 1.3912615776062012,
+      "section_type": "recipe_component"
+    },
+    {
+      "document": "Dinner Ideas - Mains_1.pdf",
+      "section_title": "Ingredients",
+      "page_number": 6,
       "importance_rank": 8,
-      "similarity_score": 1.384165644645691,
+      "similarity_score": 1.3880301713943481,
       "section_type": "recipe_component"
     },
     {
@@ -91,7 +91,7 @@
       "section_title": "Ingredients",
       "page_number": 10,
       "importance_rank": 9,
-      "similarity_score": 1.3409687280654907,
+      "similarity_score": 1.3401635885238647,
       "section_type": "recipe_component"
     },
     {
@@ -99,7 +99,7 @@
       "section_title": "Serve",
       "page_number": 10,
       "importance_rank": 10,
-      "similarity_score": 1.3381516933441162,
+      "similarity_score": 1.3372970819473267,
       "section_type": "recipe_component"
     },
     {
@@ -107,7 +107,7 @@
       "section_title": "Ingredients",
       "page_number": 7,
       "importance_rank": 11,
-      "similarity_score": 1.1925805807113647,
+      "similarity_score": 1.1924762725830078,
       "section_type": "recipe_component"
     },
     {
@@ -115,7 +115,7 @@
       "section_title": "Instructions",
       "page_number": 8,
       "importance_rank": 12,
-      "similarity_score": 1.19057297706604,
+      "similarity_score": 1.1901119947433472,
       "section_type": "recipe_component"
     },
     {
@@ -123,7 +123,7 @@
       "section_title": "Ingredients",
       "page_number": 4,
       "importance_rank": 13,
-      "similarity_score": 1.189789891242981,
+      "similarity_score": 1.1897990703582764,
       "section_type": "recipe_component"
     },
     {
@@ -131,15 +131,15 @@
       "section_title": "Serve",
       "page_number": 4,
       "importance_rank": 14,
-      "similarity_score": 1.1892279386520386,
+      "similarity_score": 1.1857272386550903,
       "section_type": "recipe_component"
     },
     {
       "document": "Dinner Ideas - Mains_1.pdf",
-      "section_title": "Ingredients",
-      "page_number": 9,
+      "section_title": "Instructions",
+      "page_number": 3,
       "importance_rank": 15,
-      "similarity_score": 1.1812751293182373,
+      "similarity_score": 1.181796908378601,
       "section_type": "recipe_component"
     }
   ],
@@ -160,16 +160,16 @@
     },
     {
       "document": "Dinner Ideas - Mains_1.pdf",
-      "section_title": "cup cornmeal",
-      "refined_text": "• 1 teaspoon paprika • 1 teaspoon cumin • 1 teaspoon salt • 1/2 teaspoon pepper • 1/2 cup buttermilk • 1/4 cup vegetable oil • Taco shells or tortillas • Shredded cabbage, diced tomatoes, sliced avocado, and lime wedges for toppings Instructions: • In a bowl, mix flour,",
-      "page_number": 10,
+      "section_title": "Place chicken in a baking dish",
+      "refined_text": ", top with marinara sauce and shredded mozzarella cheese. • Bake for 20 -25 minutes until cheese is melted and bubbly. • Serve warm. Spaghetti Bolognese Ingredients: • 1 pound ground beef • 1 small onion, diced • 2 cloves garlic, minced • 1 carrot, grated • 1 celery stalk, diced • 1 can (28 ounces) ...",
+      "page_number": 3,
       "section_type": "complete_recipe"
     },
     {
       "document": "Dinner Ideas - Mains_1.pdf",
-      "section_title": "Place chicken in a baking dish",
-      "refined_text": ", top with marinara sauce and shredded mozzarella cheese. • Bake for 20 -25 minutes until cheese is melted and bubbly. • Serve warm. Spaghetti Bolognese Ingredients: • 1 pound ground beef • 1 small onion, diced • 2 cloves garlic, minced • 1 carrot, grated • 1 celery stalk, diced • 1 can (28 ounces) ...",
-      "page_number": 3,
+      "section_title": "cup cornmeal",
+      "refined_text": "• 1 teaspoon paprika • 1 teaspoon cumin • 1 teaspoon salt • 1/2 teaspoon pepper • 1/2 cup buttermilk • 1/4 cup vegetable oil • Taco shells or tortillas • Shredded cabbage, diced tomatoes, sliced avocado, and lime wedges for toppings Instructions: • In a bowl, mix flour,",
+      "page_number": 10,
       "section_type": "complete_recipe"
     },
     {
@@ -188,15 +188,15 @@
     },
     {
       "document": "Dinner Ideas - Mains_1.pdf",
-      "section_title": "Ingredients",
-      "refined_text": "• 1 pound ground lamb or beef • 1 small onion, diced • 2 cloves garlic, minced • 1 cup frozen peas and carrots • 1 cup beef broth • 2 tablespoons tomato paste • 2 tablespoons Worcestershire sauce • 4 cups mashed potatoes • 1/4 cup grated cheddar cheese • Salt and pepper to tast e Instructions: • Pre...",
+      "section_title": "Serve",
+      "refined_text": ". Shepherd's Pie Ingredients: • 1 pound ground lamb or beef • 1 small onion, diced • 2 cloves garlic, minced • 1 cup frozen peas and carrots • 1 cup beef broth • 2 tablespoons tomato paste • 2 tablespoons Worcestershire sauce • 4 cups mashed potatoes • 1/4 cup grated cheddar cheese • Salt and pepper...",
       "page_number": 6,
       "section_type": "recipe_component"
     },
     {
       "document": "Dinner Ideas - Mains_1.pdf",
-      "section_title": "Serve",
-      "refined_text": ". Shepherd's Pie Ingredients: • 1 pound ground lamb or beef • 1 small onion, diced • 2 cloves garlic, minced • 1 cup frozen peas and carrots • 1 cup beef broth • 2 tablespoons tomato paste • 2 tablespoons Worcestershire sauce • 4 cups mashed potatoes • 1/4 cup grated cheddar cheese • Salt and pepper...",
+      "section_title": "Ingredients",
+      "refined_text": "• 1 pound ground lamb or beef • 1 small onion, diced • 2 cloves garlic, minced • 1 cup frozen peas and carrots • 1 cup beef broth • 2 tablespoons tomato paste • 2 tablespoons Worcestershire sauce • 4 cups mashed potatoes • 1/4 cup grated cheddar cheese • Salt and pepper to tast e Instructions: • Pre...",
       "page_number": 6,
       "section_type": "recipe_component"
     },
@@ -244,9 +244,9 @@
     },
     {
       "document": "Dinner Ideas - Mains_1.pdf",
-      "section_title": "Ingredients",
-      "refined_text": "• 1 pound chicken breast, cubed • 1 cup yogurt • 2 tablespoons lemon juice • 2 cloves garlic, minced • 1 teaspoon grated ginger • 1 teaspoon cumin • 1 teaspoon coriander • 1 teaspoon turmeric • 1 teaspoon paprika • 1 teaspoon garam masala • 1/2 cup heavy cream • 1 can (14. 5 ounces) diced tomatoes •...",
-      "page_number": 9,
+      "section_title": "Instructions",
+      "refined_text": "• In a large skillet, cook ground beef over medium heat until browned. • Add diced onion, minced garlic, grated carrot, and diced celery, sauté until vegetables are tender. • Stir in crushed tomatoes, tomato paste, red wi ne (if using), oregano, basil, salt, and pepper. • Simmer for 30 minutes, stir...",
+      "page_number": 3,
       "section_type": "recipe_component"
     }
   ]

@@ -1,9 +1,14 @@
 #!/usr/bin/env python3
 """
-Adobe Hackathon Challenge 1B - BERT Implementation
-Run BERT system on any collection (Collection 1, Collection 2, etc.)
-Usage: python run_collection.py --collection 1
-       python run_collection.py --all
+Challenge 1B: Document Ranking with BERT
+Process document collections using BERT-based semantic ranking.
+
+Usage:
+    python run_collection.py --collection 1
+    python run_collection.py --all
+    
+Author: Adobe Hackathon Team
+Date: July 2025
 """
 
 import os
@@ -13,83 +18,85 @@ import argparse
 import datetime
 from pathlib import Path
 
-# Add utils to path
+# Import our utility modules
 import sys
 sys.path.append('utils')
 
 from extractor import extract_sections
 from ranker import rank_sections
 
+
 def process_collection(collection_path, args=None):
     """
-    Process a single collection with BERT ranking.
+    Process a single document collection using BERT ranking.
     
     Args:
-        collection_path (str): Path to the collection directory
-        args: Command line arguments
+        collection_path: Path to collection directory
+        args: Command line arguments (optional)
         
     Returns:
-        bool: True if successful, False otherwise
+        bool: True if processing successful, False otherwise
     """
     collection_name = os.path.basename(collection_path)
-    print(f"🤖 ADOBE HACKATHON CHALLENGE 1B - BERT ON {collection_name.upper()}")
-    print("🏆 Running BERT-based Document Ranking System")
-    print("=" * 80)
+    print(f"\n=== CHALLENGE 1B: {collection_name.upper()} ===")
+    print("BERT-based Document Ranking System")
+    print("-" * 60)
     
-    # Load collection input
+    # Load collection configuration
     input_file = os.path.join(collection_path, "challenge1b_input.json")
     
     if not os.path.exists(input_file):
-        print(f"❌ Input file not found: {input_file}")
+        print(f"ERROR: Input file not found: {input_file}")
         return False
     
     try:
         with open(input_file, 'r', encoding='utf-8') as f:
             input_data = json.load(f)
     except Exception as e:
-        print(f"❌ Error reading input file: {e}")
+        print(f"ERROR: Could not read input file: {e}")
         return False
     
-    # Display scenario info
-    print(f"🎯 Challenge: {input_data['challenge_info']['description']}")
-    print(f"🧑‍💼 Persona: {input_data['persona']['role']}")
-    print(f"📋 Task: {input_data['job_to_be_done']['task']}")
-    print("=" * 80)
+    # Display scenario information
+    print(f"Challenge: {input_data['challenge_info']['description']}")
+    print(f"Persona: {input_data['persona']['role']}")
+    print(f"Task: {input_data['job_to_be_done']['task']}")
+    print("-" * 60)
     
-    # Process PDFs
-    pdf_dir = os.path.join(collection_path, "PDFs")
+    # Process PDF documents
+    pdf_directory = os.path.join(collection_path, "PDFs")
     all_sections = []
     
-    print("🚀 Initializing BERT System...")
+    print("Loading BERT system...")
     start_time = time.time()
     
-    for doc in input_data['documents']:
-        pdf_path = os.path.join(pdf_dir, doc['filename'])
-        print(f"📄 Processing: {doc['title']}")
+    for document in input_data['documents']:
+        pdf_path = os.path.join(pdf_directory, document['filename'])
+        print(f"\nProcessing: {document['title']}")
         
         if os.path.exists(pdf_path):
             try:
                 sections = extract_sections(pdf_path)
-                # Add document name to each section
-                for sec in sections:
-                    sec['document'] = doc['filename']
-                print(f"   ✅ Extracted {len(sections)} sections")
+                # Tag each section with source document
+                for section in sections:
+                    section['document'] = document['filename']
+                print(f"  -> Extracted {len(sections)} sections")
                 all_sections.extend(sections)
             except Exception as e:
-                print(f"   ❌ Error: {str(e)}")
+                print(f"  -> ERROR: {str(e)}")
         else:
-            print(f"   ❌ File not found: {pdf_path}")
+            print(f"  -> ERROR: File not found: {pdf_path}")
     
     extraction_time = time.time() - start_time
-    print(f"\n📊 Total sections extracted: {len(all_sections)}")
-    print(f"⏱️  Extraction time: {extraction_time:.2f} seconds")
+    print(f"\nExtraction complete:")
+    print(f"  Total sections: {len(all_sections)}")
+    print(f"  Processing time: {extraction_time:.2f} seconds")
     
     if not all_sections:
-        print("❌ No sections extracted. Cannot proceed with ranking.")
+        print("ERROR: No sections extracted - cannot proceed with ranking")
         return False
     
-    # Rank sections with BERT
-    print("🧠 Ranking sections with BERT...")
+    # Run BERT ranking
+    print("\nRunning BERT ranking...")
     ranking_start = time.time()
     
     # Use persona and job description for ranking

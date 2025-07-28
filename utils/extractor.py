@@ -1,7 +1,10 @@
 #!/usr/bin/env python3
 """
-Enhanced PDF Content Extractor for BERT Implementation
-Adobe Hackathon Challenge 1B - BERT Version
+PDF Content Extraction for BERT Ranking
+Extracts and preprocesses document sections for semantic analysis.
+
+Author: Adobe Hackathon Team  
+Date: July 2025
 """
 
 import PyPDF2
@@ -9,45 +12,62 @@ import re
 from pathlib import Path
 import json
 
+
 def extract_sections(pdf_path):
     """
-    Extract sections from PDF with enhanced preprocessing for BERT
+    Extract text sections from PDF document.
+    Optimized for BERT-based semantic ranking.
+    
+    Args:
+        pdf_path: Path to PDF file
+        
+    Returns:
+        list: List of section dictionaries with text and metadata
     """
     sections = []
     
     try:
         with open(pdf_path, 'rb') as file:
-            reader = PyPDF2.PdfReader(file)
+            pdf_reader = PyPDF2.PdfReader(file)
             
-            for page_num, page in enumerate(reader.pages, 1):
+            for page_num, page in enumerate(pdf_reader.pages, 1):
                 try:
-                    text = page.extract_text()
-                    if not text.strip():
+                    page_text = page.extract_text()
+                    if not page_text.strip():
                         continue
                     
-                    # Enhanced section detection for BERT
-                    page_sections = parse_page_content_for_bert(text, pdf_path, page_num)
+                    # Extract sections from this page
+                    page_sections = parse_page_content(page_text, pdf_path, page_num)
                     sections.extend(page_sections)
                     
                 except Exception as e:
-                    print(f"⚠️  Error processing page {page_num}: {e}")
+                    print(f"Warning: Error processing page {page_num}: {e}")
                     continue
     
     except Exception as e:
-        print(f"❌ Error reading PDF {pdf_path}: {e}")
+        print(f"ERROR: Could not read PDF {pdf_path}: {e}")
         return []
     
-    print(f"✅ Extracted {len(sections)} sections from {Path(pdf_path).name}")
+    print(f"Extracted {len(sections)} sections from {Path(pdf_path).name}")
     return sections
 
-def parse_page_content_for_bert(text, pdf_path, page_num):
+
+def parse_page_content(text, pdf_path, page_num):
     """
-    Parse page content with BERT-optimized section detection
+    Parse page text into meaningful sections for BERT analysis.
+    
+    Args:
+        text: Raw page text
+        pdf_path: Source PDF path  
+        page_num: Page number
+        
+    Returns:
+        list: List of section dictionaries
     """
     sections = []
     
-    # Clean and normalize text for BERT processing
-    cleaned_text = clean_text_for_bert(text)
+    # Clean and normalize text
+    cleaned_text = normalize_text(text)
     
     # Multiple section detection strategies
     sections.extend(detect_heading_sections(cleaned_text, pdf_path, page_num))
@@ -60,7 +80,7 @@ def parse_page_content_for_bert(text, pdf_path, page_num):
     
     return sections
 
-def clean_text_for_bert(text):
+def normalize_text(text):
     """
     Clean and normalize text for optimal BERT processing
     """

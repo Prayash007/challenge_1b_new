@@ -1,7 +1,10 @@
 #!/usr/bin/env python3
 """
-Improved BERT-based Ranking System
-Adobe Hackathon Challenge 1B - Advanced BERT Implementation
+BERT-based Document Ranking System
+Semantic similarity ranking using RoBERTa transformer model.
+
+Author: Adobe Hackathon Team
+Date: July 2025
 """
 
 import torch
@@ -11,67 +14,70 @@ import time
 import re
 from pathlib import Path
 
-# Global model variables
+# Model globals to avoid reloading
 _tokenizer = None
 _model = None
-_model_initialized = False
+_model_loaded = False
 
-def initialize_bert_model():
+
+def load_bert_model():
     """
-    Initialize the improved BERT model (RoBERTa-Large with optimizations)
+    Initialize RoBERTa model for document ranking.
+    Uses caching to avoid reloading on subsequent calls.
     """
-    global _tokenizer, _model, _model_initialized
+    global _tokenizer, _model, _model_loaded
     
-    if _model_initialized:
+    if _model_loaded:
         return _tokenizer, _model
     
     try:
         from transformers import AutoTokenizer, AutoModel
         
-        print("🤖 Initializing Improved BERT System...")
-        print("   📈 Model: RoBERTa-Base (125M parameters, ~500MB)")
-        print("   🔧 Features: Multi-layer embeddings + Dynamic personas + Quantization")
-        print("   ✅ Meets <1GB constraint requirement")
+        print("Loading BERT model...")
+        print("  Model: RoBERTa-Base (125M parameters, ~500MB)")
+        print("  Features: Multi-layer embeddings, quantization")
+        print("  Size constraint: <1GB (compliant)")
         
         model_name = "roberta-base"
         
-        # Load tokenizer and model
+        # Load pretrained model and tokenizer
         _tokenizer = AutoTokenizer.from_pretrained(model_name)
         _model = AutoModel.from_pretrained(model_name)
         
-        # Apply quantization for speed improvement
+        # Apply INT8 quantization for speed
         try:
-            print("   ⚡ Applying INT8 quantization...")
+            print("  Applying quantization...")
             _model = torch.quantization.quantize_dynamic(
                 _model, {torch.nn.Linear}, dtype=torch.qint8
             )
-            print("   ✅ Quantization applied successfully (2-3x speed boost)")
+            print("  Quantization successful (2-3x speedup)")
         except Exception as e:
-            print(f"   ⚠️  Quantization failed, using full precision: {e}")
+            print(f"  Quantization failed, using full precision: {e}")
         
-        _model_initialized = True
-        print("✅ Improved BERT model ready!")
+        _model_loaded = True
+        print("BERT model ready!")
         
         return _tokenizer, _model
         
     except Exception as e:
-        print(f"❌ Error initializing BERT model: {e}")
-        print("💡 Please install required packages: pip install torch transformers")
+        print(f"ERROR: Could not load BERT model: {e}")
+        print("Make sure you have: pip install torch transformers")
         return None, None
 
-def extract_dynamic_persona_keywords(persona, job):
+
+def extract_keywords_from_persona(persona, job_description):
     """
-    Extract keywords dynamically from persona and job description
-    No hardcoded assumptions - works with any persona/job combination
+    Extract relevant keywords from persona and job description.
+    Works dynamically with any persona/job combination.
     """
-    # Combine persona and job text
-    combined_text = f"{persona} {job}".lower()
+    # Combine text for analysis
+    text = f"{persona} {job_description}".lower()
     
-    # Extract meaningful words (3+ characters)
-    words = re.findall(r'\b[a-zA-Z]{3,}\b', combined_text)
+    # Extract words (3+ characters)
+    words = re.findall(r'\b[a-zA-Z]{3,}\b', text)
     
-    # Enhanced stop words list (but preserve domain-specific terms)
-    stop_words = {
+    # Common stopwords to filter out
+    stopwords = {
         'the', 'and', 'for', 'are', 'but', 'not', 'you', 'all', 'can', 'had', 
         'her', 'was', 'one', 'our', 'out', 'day', 'get', 'has', 'him', 'how', 
         'man', 'new', 'now', 'old', 'see', 'two', 'way', 'who', 'with', 'that',
@@ -81,10 +87,10 @@ def extract_dynamic_persona_keywords(persona, job):
         'back', 'after', 'very', 'good', 'well', 'where', 'much', 'before'
     }
     
-    # Filter out stop words and short words
-    keywords = [word for word in words if word not in stop_words and len(word) > 2]
+    # Filter meaningful keywords
+    keywords = [word for word in words if word not in stopwords and len(word) > 2]
     
-    # Remove duplicates while preserving order
+    # Remove duplicates while keeping order
     unique_keywords = []
     seen = set()
     for keyword in keywords:
@@ -92,7 +98,7 @@ def extract_dynamic_persona_keywords(persona, job):
             seen.add(keyword)
             unique_keywords.append(keyword)
     
-    # Return top keywords (limit for efficiency)
+    # Return top keywords for efficiency
     return unique_keywords[:12]
 
 def expand_query_semantically(keywords):
@@ -172,7 +178,7 @@ def rank_sections(sections, persona, job_description):
     Main ranking function using improved BERT
     """
     # Initialize BERT model if not already done
-    tokenizer, model = initialize_bert_model()
+    tokenizer, model = load_bert_model()
     
     if not tokenizer or not model:
         print("❌ BERT model not available, cannot rank sections")
@@ -195,7 +201,7 @@ def rank_sections(sections, persona, job_description):
             return [], []
         
         # Dynamic persona analysis
-        keywords = extract_dynamic_persona_keywords(persona, job_description)
+        keywords = extract_keywords_from_persona(persona, job_description)
         expanded_keywords = expand_query_semantically(keywords)
         
         print(f"   🎯 Extracted {len(keywords)} persona keywords")
