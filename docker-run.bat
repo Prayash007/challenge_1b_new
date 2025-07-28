@@ -1,6 +1,6 @@
 @echo off
 REM Docker run scripts for Challenge 1B BERT Implementation
-REM Adobe Hackathon Challenge 1B - Windows Version
+REM Adobe Hackathon Challenge 1B - Windows Version 11 
 
 setlocal EnableDelayedExpansion
 
