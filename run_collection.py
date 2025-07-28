@@ -1,16 +1,3 @@
-#!/usr/bin/env python3
-"""
-Challenge 1B: Document Ranking with BERT
-Process document collections using BERT-based semantic ranking.
-
-Usage:
-    python run_collection.py --collection 1
-    python run_collection.py --all
-    
-Author: Adobe Hackathon Team
-Date: July 2025
-"""
-
 import os
 import json
 import time
@@ -240,8 +227,7 @@ def main():
             success_count += 1
         print(f"{'='*80}")
     
-    print(f"\n🏆 Challenge 1B BERT complete! Successfully processed {success_count}/{len(collections)} collections.")
-    print("� Ready for Adobe Hackathon submission!")
+    print(f"\n🏆 Challenge 1B completed! Successfully processed {success_count}/{len(collections)} collections.")
 
 if __name__ == "__main__":
     main()
