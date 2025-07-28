@@ -1,12 +1,3 @@
-#!/usr/bin/env python3
-"""
-BERT-based Document Ranking System
-Semantic similarity ranking using RoBERTa transformer model.
-
-Author: Adobe Hackathon Team
-Date: July 2025
-"""
-
 import torch
 import numpy as np
 from sklearn.metrics.pairwise import cosine_similarity

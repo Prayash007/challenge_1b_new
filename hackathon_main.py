@@ -1,13 +1,3 @@
-#!/usr/bin/env python3
-"""
-Challenge 1B: BERT Document Ranking (Hackathon Entry Point)
-Docker-compatible entry point for hackathon submission.
-Processes /app/input -> /app/output with BERT ranking.
-
-Author: Adobe Hackathon Team
-Date: July 2025
-"""
-
 import os
 import sys
 import json

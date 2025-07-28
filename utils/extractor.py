@@ -1,13 +1,4 @@
-#!/usr/bin/env python3
-"""
-PDF Content Extraction for BERT Ranking
-Extracts and preprocesses document sections for semantic analysis.
-
-Author: Adobe Hackathon Team  
-Date: July 2025
-"""
-
-import PyPDF2
+"import PyPDF2
 import re
 from pathlib import Path
 import json
