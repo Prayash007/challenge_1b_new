@@ -125,8 +125,6 @@ def process_collection(collection_path, args=None):
         'job_to_be_done': job_description,
         'processing_timestamp': datetime.datetime.now().isoformat(),
         'model_type': 'BERT (RoBERTa-Base)',
-        'model_size': '~500MB',
-        'constraint_compliance': '<1GB ✅',
         'processing_time_seconds': ranking_time + extraction_time,
         'sections_processed': len(all_sections),
         'sections_ranked': len(ranked_results)
@@ -152,12 +150,10 @@ def process_collection(collection_path, args=None):
     print("=" * 80)
     
     for i, section in enumerate(ranked_results[:10], 1):
-        score = section.get('score', 'N/A')
         title = section.get('section_title', 'Untitled')
         text = section.get('section_text', '')
         
-        print(f"\n{i}. SCORE: {score}")
-        print(f"   TITLE: {title}")
+        print(f"\n{i}. TITLE: {title}")
         print(f"   SOURCE: {section.get('document', section.get('source', 'Unknown'))}")
         print(f"   CONTENT: {text[:200]}...")
         if len(text) > 200:
@@ -179,8 +175,7 @@ def process_collection(collection_path, args=None):
     print(f"   Documents Processed: {len(input_data['documents'])}")
     print(f"   Sections Extracted: {len(all_sections)}")
     print(f"   Average Section Length: {sum(len(s.get('section_text', '')) for s in all_sections) / len(all_sections):.0f} chars")
-    print(f"   BERT Model: RoBERTa-Base (~500MB)")
-    print(f"   Constraint Compliance: ✅ <1GB")
+    print(f"   BERT Model: RoBERTa-Base")
     
     print(f"\n🎉 BERT processing on {collection_name} complete!")
     return True
